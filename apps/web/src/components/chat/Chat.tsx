@@ -54,7 +54,11 @@ export default function Chat() {
     [setMessages, setUsers]
   );
 
-  const webSocket = useWebSocket({ url: `ws://localhost:4000/?username=${username}`, onMessage, connect: !!username });
+  const webSocket = useWebSocket({
+    url: `wss://wschat-server.fly.dev/?username=${username}`,
+    onMessage,
+    connect: !!username
+  });
 
   const handleMessage = useCallback(() => {
     webSocket?.send(JSON.stringify({ type: 'MESSAGE_ADD', data: textareaRef.current?.value, username }));
