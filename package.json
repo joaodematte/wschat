@@ -13,5 +13,8 @@
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.6.10",
-  "name": "wschat"
+  "name": "wschat",
+  "dependencies": {
+    "bun": "^1.0.1"
+  }
 }
